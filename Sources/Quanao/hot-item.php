@@ -5,17 +5,26 @@
         <div class="container" style="height:320px;">
             <div class="row" style="height:320px;">
                 <div class="col-md-3">
-                    <form style="height:320px;width:210px;">
+                <figure class="figure">
+  <img src="assets/img/SP/ao_khoac_doi_5__1__500x750.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+  <span>
+                        <button class="btn btn-primary" type="button">Thông Tin SP</button>
+                        
+                        <button class="btn btn-primary" type="button">Đặt hàng</button>
+                    </span>
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>
+                    <!-- <form style="height:320px;width:210px;">
                     <table>
                     <tr><img src="assets/img/SP/ao_khoac_doi_5__1__500x750.jpg" style="width:210px;height:250px;" class="sp"></tr>
                     
                     <tr>
                         <td><button class="btn btn-primary" type="button">Thông Tin SP</button></td>
-                        <!-- <td><a href="#" style="width:92px;height:20px;">Thông Tin</a></td> -->
+                        
                         <td><button class="btn btn-primary" type="button">Đặt hàng</button></td>
                     </tr>
                     </table>
-                </form>
+                </form> -->
                 <!-- <form action="">
                 <section
                       class="productInfo"><h2 class="product-name">
