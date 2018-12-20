@@ -1,0 +1,20 @@
+.left{
+	width:240px;
+	height: auto;
+	border:1px solid #000;
+	float:left;
+	
+}
+.right{
+	width:auto;
+	height:auto;
+	border:1px solid #000;
+	float: right;
+}
+.sticky-top{
+    background:black !important;
+}
+td{
+    
+
+}
