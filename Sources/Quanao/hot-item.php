@@ -2,17 +2,18 @@
 <div class="body">
 <div class="col" align="center" type="padding=10px;"><br><h3> HOT ITEM</h3><br></div>
 <div style="height:320px;">
-        <div class="container" style="height:320px;">
-            <div class="row" style="height:320px;">
+        <div class="container-fulid" style="height:320px;">
+            <div class="row" style="">
                 <div class="col-md-3">
                 <figure class="figure">
-  <img src="assets/img/SP/ao_khoac_doi_5__1__500x750.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-  <span>
-                        <button class="btn btn-primary" type="button">Thông Tin SP</button>
-                        
-                        <button class="btn btn-primary" type="button">Đặt hàng</button>
+               <img src="assets/img/SP/ao_khoac_doi_5__1__500x750.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                 <span>
+                        <p>Áo hoodie đôi</p>
                     </span>
-  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+  <figcaption class="figure-caption">
+  <button class="btn btn-primary" type="button">Thông Tin SP</button>
+                        
+                        <button class="btn btn-primary" type="button">Đặt hàng</button></figcaption>
 </figure>
                     <!-- <form style="height:320px;width:210px;">
                     <table>
@@ -45,8 +46,8 @@ class="iconCart fa fa-shopping-cart"></i></p></div></section></form> -->
                     <table>
                     <tr><img src="assets/img/SP/ao_khoac_doi_11__1__500x750.jpg" style="width:210px;height:250px;" class="sp"></tr>
                     <tr>
-                        <td><a href="#" style="width:92px;height:20px;" >Thông Tin</a></td>
-                        <td><button class="btn btn-primary" type="button">Đặt hàng</button></td>
+                        <!-- <td><a href="#" style="width:92px;height:20px;" >Thông Tin</a></td>
+                        <td><button class="btn btn-primary" type="button">Đặt hàng</button></td> -->
                     </tr>
                     </table>
                 </form>

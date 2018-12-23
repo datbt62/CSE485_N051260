@@ -1,6 +1,12 @@
 <?php
-$conn= mysqli_connect('localhost','root','','quanao');
-if(!$conn){
-    die('Ket noi that bai'.mysqli_connect_error());
-}
+
+$userName='root';
+$passWord='';
+$server='localhost';
+$dbName='quanao';
+//Kết nối
+$cnn= mysqli_connect($server, $userName, $passWord, $dbName);
+//Nếu kết nối lỗi thì thông báo và thoát
+
+
 ?>

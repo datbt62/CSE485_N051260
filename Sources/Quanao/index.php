@@ -28,7 +28,7 @@
             include('modules/header.php');            
             include('modules/menu.php'); 
             include('modules/slide.php');
-            // include('modules/contentclient.php');
+            include('modules/content.php');
             include('hot-item.php') ;          
             include('modules/footer.php');
 			
