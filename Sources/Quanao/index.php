@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop thời trang số 1 Hà Nội</title>
     <link rel="icon" href="assets/img/logofix.png" type="img/png">
+    <link rel="stylesheet" href="assets/js/jquery.min.js">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/js/bootstrap.min.js">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -31,8 +32,7 @@
             include('modules/content.php');
             include('hot-item.php') ;          
             include('modules/footer.php');
-			
-			
+        
 
  ?>   
      <script src="assets/js/jquery.min.js"></script>

@@ -6,7 +6,7 @@
     <div class="col-md-2" align=center>
              <img src="assets/img/logofix.png" alt="" srcset=""></div>
         <li class="dropdown">
-            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:#fcfeff;">Áo Nam</a>
+            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="" style="color:#fcfeff;">Áo Nam</a>
                 <div class="dropdown-menu" role="menu" >
                     <a class="dropdown-item" role="presentation" href="index.php?page=aothunnam" >Áo Thun</a>
                     <a class="dropdown-item" role="presentation" href="index.php?page=aohoodienam" >Áo hoodie</a>
@@ -16,7 +16,7 @@
     
     
         <li class="dropdown">
-            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:#fcfeff;">Áo Nữ</a>
+            <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="" style="color:#fcfeff;">Áo Nữ</a>
                 <div class="dropdown-menu" role="menu">
                     <a class="dropdown-item" role="presentation" href="index.php?page=aothunnu">Áo thun</a>
                     <a class="dropdown-item" role="presentation" href="index.php?page=aohoodienu">Áo hoodie</a>

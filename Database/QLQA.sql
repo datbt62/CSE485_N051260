@@ -9,7 +9,7 @@ CREATE TABLE `admin` (
 `id_user`  int(11) NOT NULL AUTO_INCREMENT ,
 `username`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
 `password`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
-`quyen_truy_cap`  int(1) NOT NULL ,
+
 `hoten`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
 `gioitinh` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
 `sdt`  int(11) NOT NULL ,
@@ -27,7 +27,7 @@ AUTO_INCREMENT=1
 -- Records of admin
 -- ----------------------------
 BEGIN;
-INSERT INTO `admin` VALUES ('1', 'admin', 'admin', '1', 'Thành Đạt','Nam', '84985918798','1998/11/18', 'datbt62@wru.vn');
+INSERT INTO `admin` VALUES ('1', 'admin', 'admin', 'Thành Đạt','Nam', '84985918798','1998/11/18', 'datbt62@wru.vn');
 COMMIT;
 
 -- ----------------------------
@@ -151,27 +151,6 @@ INSERT INTO `nhacc` VALUES ('1', 'Shop đẹp', '(043) 8515380', 'shopdep@yahoo.
 COMMIT;
 
 -- ----------------------------
--- Table structure for quyen
--- ----------------------------
-DROP TABLE IF EXISTS `quyen`;
-CREATE TABLE `quyen` (
-`quyen_truy_cap`  int(1) NULL DEFAULT NULL ,
-`KichHoat`  varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`tenquyen`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL 
-)
-ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-
-;
-
--- ----------------------------
--- Records of quyen
--- ----------------------------
-BEGIN;
-INSERT INTO `quyen` VALUES ('1', 'Active', 'Quản lý'), ('2', 'Active', 'Nhân viên');
-COMMIT;
-
--- ----------------------------
 -- Table structure for sp
 -- ----------------------------
 DROP TABLE IF EXISTS `sanpham`;
@@ -181,8 +160,8 @@ CREATE TABLE `sanpham` (
 `maloaisp`  int(1) ,
 `Mancc`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `HinhAnh`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`MoTa`  text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
 `DonGia`  int(11) NOT NULL ,
+`khuyenmai` int,
 `SoLuongTon`  bigint(20) NOT NULL ,
 PRIMARY KEY (`masp`)
 )
@@ -195,6 +174,18 @@ DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 -- Records of sp
 -- ----------------------------
 BEGIN;
-INSERT INTO `sanpham` VALUES ('1', 'Áo hoodie', '1', '1', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181220/hoodie_nam_2__2__500x750.jpg', 'Màu đen,túi nối liền 2 tay,kẻ trắng vàng ở cánh tay ', '250000', '5');
+INSERT INTO `sanpham` VALUES ('1', 'Áo hoodie', '1', '1', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181220/hoodie_nam_2__2__500x750.jpg', '250000','10', '5')
+, ('2', 'Áo hoodie', '1', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181220/hoodie_nam_4__2__500x750.jpg', '250000','20', '5')
+,('3', 'Áo thun', '1', '1', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181222/thun_nam_12__1__500x750.jpg', '100000','30', '5')
+,('4', 'Quần kaki', '1', '1', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181011/quan_tay_nam_13__1__500x750.jpg', '250000', '20','5')
+,('5', 'Quần jeans', '1', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181213/jean_nam_22__1__500x750.jpg',  '300000','15', '5')
+,('6', 'Áo thun', '2', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181222/ao_thun_nu_5__1__500x750.jpg',  '150000', '20','5')
+,('7', 'Áo sơ mi', '2', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181108/somi_nu_9__1__thumb_400x600.jpg', '150000','15', '4')
+,('8', 'Áo sơ mi', '1', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181222/somi_nam_20__1__500x750.jpg', '150000', '30','4')
+,('9', 'Áo khoác', '1', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181222/khoac_doi_32__1__500x750.jpg', '250000', '0.1','4')
+,('10', 'Áo dạ', '1', '', 'https://media3.scdn.vn/img2/2017/11_28/ao-khoac-da-nam-1m4G3-SosHr4_simg_ab1f47_350x350_maxb.png',  '500000','10', '3')
+,('11', 'Áo cadigan', '2', '', 'https://img.zanado.com/media/catalog/product/cache/all/thumbnail/360x420/7b8fef0172c2eb72dd8fd366c999954c/2/_/ao_khoac_cardigan_nu_viet_thy_115d.jpg',  '300000','20', '3')
+, ('12', 'Áo phao', '1', '', 'https://vn-live-01.slatic.net/original/a5ee5a7a1f7dbb54fc8f32d9e76a027b.jpg', '400000','10', '3')
+,('13', 'Áo hoodie', '2', '', 'http://cdn.nhanh.vn/cdn/store/7136/ps/20181115/ao_khoac_nu_3__1__500x750.jpg', '250000','5', '3');
 COMMIT;
 

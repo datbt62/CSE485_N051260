@@ -14,4 +14,11 @@
 .sticky-top{
     background:black !important;
 }
-
+img{
+	width: 240px;
+	height: 320px;
+}
+.formsp{
+	margin: 5px;
+	width: 250px;
+}

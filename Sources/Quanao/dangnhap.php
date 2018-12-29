@@ -9,7 +9,7 @@ header('Content-Type: text/html; charset=UTF-8');
 if (isset($_POST['dangnhap'])) 
 {
     //Kết nối tới database
-    include('config.php');
+    include('modules/config.php');
      
     //Lấy dữ liệu nhập vào
     $username = addslashes($_POST['txtUsername']);
@@ -25,14 +25,14 @@ if (isset($_POST['dangnhap']))
     $password = md5($password);
      
     //Kiểm tra tên đăng nhập có tồn tại không
-    $query = mysql_query("SELECT `username`, `password` FROM `admin` WHERE username='$username'");
-    if (mysql_num_rows($query) == 0) {
+    $query = mysqli_query("SELECT `username`, `password` FROM `admin` WHERE username='$username'");
+    if (mysqli_num_rows($query) == 0) {
         echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
     }
      
     //Lấy mật khẩu trong database ra
-    $row = mysql_fetch_array($query);
+    $row = mysqli_fetch_array($query);
      
     //So sánh 2 mật khẩu có trùng khớp hay không
     if ($password != $row['password']) {
@@ -61,7 +61,7 @@ if (isset($_POST['dangnhap']))
         </button>
       </div>
       <div class="modal-body">
-      <form action='dangnhap.php?do=login' method='POST'>
+      <form method='POST'>
             <table cellpadding='5' cellspacing='5' text-color='black'>
                 <tr>
                     <td>
@@ -90,33 +90,5 @@ if (isset($_POST['dangnhap']))
     </div>
   </div>
 </div>
-<!-- <div class="container-fulid" style="margin-top: 5px;">
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-md-offset-3" align="center">
-        <img src="assets/img/logo.png" alt="" srcset="">   
-        <form action='dangnhap.php?do=login' method='POST'>
-            <table cellpadding='5' cellspacing='5' >
-                <tr>
-                    <td>
-                        Tên đăng nhập :
-                    </td>
-                    <td>
-                        <input type='text' name='txtUsername' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Mật khẩu :
-                    </td>
-                    <td>
-                        <input type='password' name='txtPassword' />
-                    </td>
-                </tr>
-            </table>
-            <input type='submit' value='Đăng nhập' />
-            <a href='/Quanao'>Trở về</a>
-        </form>
-        </div>
-    </div>
-   </div>
- -->
+
+

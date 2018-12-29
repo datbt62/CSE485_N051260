@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav">
                             <li class="nav-item" role="presentation">
-                            <a class="nav-link" href="/Quanao">Trang chủ</a></li>
+                            <a class="nav-link" href="../Quanao">Trang chủ</a></li>
                             <li class="nav-item" role="presentation">
                             <a class="nav-link" href="#">Fanpage</a></li>
                             <li class="nav-item" role="presentation">
