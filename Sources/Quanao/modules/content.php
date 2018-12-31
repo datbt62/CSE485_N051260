@@ -2,7 +2,7 @@
 
       
       
-      <div class="row">
+      
            <?PHP
 		        $page=isset($_GET["page"])?$_GET["page"]:"";
 		        if($page=='aothunnam'){
@@ -106,22 +106,38 @@
 					$tenloaisp='';
 					include('modules/chitietsp.php');			 
 				}
-				else 
-				if($page=='aonam'){
-					$tensp='Áo%';
-					$tenloaisp='Nam';
-					include('modules/chitietsp.php');			 
+				// else 
+				// if($page=='aonam'){
+				// 	$tensp='Áo%';
+				// 	$tenloaisp='Nam';
+				// 	include('modules/chitietsp.php');			 
+				// }
+				// else 
+				// if($page=='aonu'){
+				// 	$tensp='Áo%';
+				// 	$tenloaisp='Nữ';
+				// 	include('modules/chitietsp.php');			 
+				// }
+				else
+				if($page=='slide1'){
+					$maslide='1';
+					include('modules/slide/tintuc.php');
 				}
-				else 
-				if($page=='aonu'){
-					$tensp='Áo%';
-					$tenloaisp='Nữ';
-					include('modules/chitietsp.php');			 
+				else if($page=='slide2'){
+					$maslide='2';
+					include('modules/slide/tintuc.php');
 				}
-			 
+				else if($page=='slide3'){
+					$maslide='3';
+					include('modules/slide/tintuc.php');
+				}
+				else if($page=='slide4'){
+					$maslide='4';
+					include('modules/slide/tintuc.php');
+				}
 		   ?>
             
-      </div>
+      
         
     </div>    
      <div class="clear"></div>

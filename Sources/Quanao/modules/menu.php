@@ -3,7 +3,7 @@
 ?>
 
     <ul class="nav nav-tabs sticky-top">
-    <div class="col-md-2" align=center>
+        <div class="col-md-2" align=center>
              <img src="assets/img/logofix.png" alt="" srcset=""></div>
         <li class="dropdown">
             <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="" style="color:#fcfeff;">Áo Nam</a>

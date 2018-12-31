@@ -1,4 +1,4 @@
-<div class="header">
+<div class="headeradmin">
 <div class="header-dark" style="background-color:black;height:80px;">
     <div class="col"><nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
         <div class="container">
@@ -24,14 +24,10 @@
                             </label>
                             <input class="form-control search-field" type="search" name="search" id="search-field"></div>
                         </form>
-                        <div class="shoppingcart">
-                        <button class="btn btn-secondary" type="button" >
-                        <img src="assets/img/_ionicons_svg_md-cart.svg" alt="" srcset="" height=30 width=30>
-                        </button></div>
-                        <form class="dangnhap"><span class="navbar-text" style="color:black; padding:5px; margin:5px;">
-                        <a href="" class="login" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập</a>
-                        <?php include('dangnhap.php'); ?>
-                        <div class="logout"></div>
+                        
+                        <form class="dangxuat"><span class="navbar-text" style="color:black; padding:5px; margin:5px;">
+                        <a href="" class="logout" data-toggle="modal" data-target="#exampleModalCenter">Đăng xuất</a>
+                        
                         </span>
                         
                         </form>
@@ -42,5 +38,3 @@
     </div>
 </div>
 </div>
-
-
