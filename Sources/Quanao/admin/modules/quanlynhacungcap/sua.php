@@ -1,7 +1,7 @@
 
 <?php
      $sql="select * from nhacc where MaNCC='$_GET[id]'";
-     mysqli_set_charset($cnn,"utf8");
+    
 	 $run=mysqli_query($cnn,$sql);
 	 $dong= mysqli_fetch_array($run);
 ?>

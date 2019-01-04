@@ -21,7 +21,7 @@ if(isset($_GET["id"]) && isset($_GET["sl"] )){
    if(isset($_GET["id"]) && isset($_GET["sl"] )){unset($_SESSION['cart'][$_GET["action"]]);}
 ?>
 <div class="container">
-<form action="cart.php" method="get">
+
 <table class="table table-bordered">
 <tr>
 <thead class="thead-dark">
@@ -65,7 +65,7 @@ if(!empty($_SESSION["cart"])){
 </td></tr>
 
 </table>
-</form>
+
 <script>
 function updateItem(id){
     sl=$("#sl_"+id).val();
