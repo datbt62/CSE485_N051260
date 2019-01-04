@@ -1,9 +1,8 @@
-<div class="contentadmin">
+<div class="contentnhanvien">
 <div class="container">
         <?PHP
 		
-			$quanly=isset($_GET["quanly"])?$_GET["quanly"]:"";
-			
+		    $quanly=isset($_GET["quanly"])?$_GET["quanly"]:"";
 		    if($quanly=='quanlysanpham'){
 				include('quanlysanpham/main.php');			 
 			}
@@ -18,10 +17,6 @@
 			else 
 			if($quanly=='quanlyslide'){
 				include('quanlyslide/main.php');				 
-			}
-			else 
-			if($quanly=='quanlytaikhoan'){
-				include('quanlytaikhoan/main.php');				 
 			}
 		?>
 	</div>

@@ -16,7 +16,7 @@ while ($dong= mysqli_fetch_array($kq)) {
 
                 <div class="swiper-slide" >
                     <?php 
-                         echo '<a href="index.php?page=slide'.$dong['Maslide'].'" width=100%><img src="'.$dong['Anhslide'].' "></a>';?>
+                         echo '<a href="index.php?page=slide&id='.$dong['Maslide'].'" width=100%><img src="'.$dong['Anhslide'].' "></a>';?>
                 </div>               
   <?php } ?>           
             </div>

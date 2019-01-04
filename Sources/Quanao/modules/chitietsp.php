@@ -59,7 +59,7 @@ if(!$result){
     </tr>
     <tr>
     <td align=center>
-    <button class="btn btn-warning" id="dathang">Thêm giỏ hàng</button>
+    <button class="btn btn-warning" id="themgiohang" ><a href="index.php?page=cart&id=<?php echo $row['masp']?>">Thêm giỏ hàng</a></button>
     </td>    
     </tr>
 

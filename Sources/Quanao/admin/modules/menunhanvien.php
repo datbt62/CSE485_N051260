@@ -1,11 +1,9 @@
 <?php ?>
-<div class="menuadmin nav nav-tabs sticky-top" style="background-color=black;">
+<div class="menunhanvien nav nav-tabs sticky-top" style="background-color=black;">
 <div class="col-md-2" align=center>
              <img src="assets/img/logofix.png" alt="" srcset=""></div>
 <ul class="nav nav-pills ">
-<li class="nav-item">
-    <a class="nav-link"  aria-expanded="false" href="index.php?quanly=quanlytaikhoan&ac=them" style="color:#fcfeff;">Quản lý tài Khoản</a>
-  </li>
+  
   <li class="nav-item">
     <a class="nav-link"  aria-expanded="false" href="index.php?quanly=quanlysanpham&ac=them" style="color:#fcfeff;">Quản lý Sản phẩm</a>
   </li>

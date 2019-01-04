@@ -1,17 +1,14 @@
 
 <?php
-     $sql="select * from sanpham where masp='$_GET[id]'";
+  
+  $sql="select * from sanpham where masp='$_GET[id]'";
 	 $run=mysqli_query($cnn,$sql);
 	 $dong= mysqli_fetch_array($run);
 ?>
-<style>
-th{
-	background:#666	
-	}
-</style>
+
 
 <form action="modules/quanlysanpham/xuly.php?id=<?php echo $dong['masp']?>" method="post" enctype="multipart/form-data">
-<table class="table" width="100%" border="1">
+<table class="table table-border" width="100%">
 <thead class="thead-dark">
   <tr>
     <th colspan="2"><div align="center">Sửa Chi Tiết Sản Phẩm</div></th>
@@ -19,11 +16,11 @@ th{
   </thead>
   <tr>
     <td>Tên Sản Phẩm</td>
-    <td><input type="text" name="Tensp" value="<?php echo $dong['tensp']?>"></td>
+    <td><input type="text" name="tensp" value="<?php echo $dong['tensp']?>"></td>
   </tr>
   
     <td>Khuyến mãi</td>
-    <td><input type="text" name="Khuyenmai" value="<?php echo $dong['khuyenmai']?>"></td>
+    <td><input type="text" name="khuyenmai" value="<?php echo $dong['khuyenmai']?>"></td>
   </tr>
   <tr>
     <td>Giá</td>
@@ -45,49 +42,38 @@ th{
   ?>
   <tr>
     <td>Loại Sản Phẩm</td>
-    <td><select name="loaisp">
+    
+    <td>
+    
+    <input type="text" name="maloaisp" value="<?php echo $dong['maloaisp']?>">
     <?php
     while($dong_loaisp=mysqli_fetch_array($run_loaisp)){
-		if($dong['maloaisp']==$dong_loaisp['maloaisp']){
-		?>
-    <option selected="selected" value="<?php echo $dong_loaisp['maloaisp']?>"><?php
-    echo $dong_loaisp['tenloaisp']?> </option>
-    <?php
-	}else{
-	?>
-    <option value="<?php echo $dong_loaisp['maloaisp']?>"><?php
-    echo $dong_loaisp['tenloaisp']?> </option>
-    <?php
-	}
+		echo '<p>'.$dong_loaisp['maloaisp'].'.'.$dong_loaisp['tenloaisp'].'<p>';
+	
 	}
 	?>
-    </select></td>
+    </td>
   </tr>
    
   
   <?php
   $sql_nhacc="select * from nhacc";
-  $run_nhacc=mysqli_query($cnn,$sql_nhacc);
+  $run_ncc=mysqli_query($cnn,$sql_nhacc);
   ?>
   <tr>
     <td>Nhà Cung Cấp</td>
-    <td><select name="nhacc">
+    
+    <td>
+    
+    <input type="text" name="nhacc" value="<?php echo $dong['Mancc']?>">
     <?php
-    while($dong_nhacc=mysqli_fetch_array($run_nhacc)){
-		if($dong['MaNCC']==$dong_nhacc['MaNCC']){
-		?>
-    <option selected="selected" value="<?php echo $dong_nhacc['MaNCC']?>"><?php
-    echo $dong_nhacc['TenNCC']?> </option>
-    <?php
-	}else{
-	?>
-    <option value="<?php echo $dong_nhacc['MaNCC']?>"><?php
-    echo $dong_nhacc['TenNCC']?> </option>
-    <?php
-	}
+    while($dong_ncc=mysqli_fetch_array($run_ncc)){
+		echo '<p>'.$dong_ncc['MaNCC'].'.'.$dong_ncc['TenNCC'].'<p>';
+	
 	}
 	?>
-    </select></td>
+    </td>
+    
   </tr>
   <tr>
     <td colspan="2"> <div align="center">

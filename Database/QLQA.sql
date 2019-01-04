@@ -1,4 +1,8 @@
-
+-- Tạo cơ sở dữ liệu
+DROP Database IF EXISTS `quanao`;
+create database `quanao` character set utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- ---------------
+-- Tạo bảng --
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -7,19 +11,19 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
 `id_user`  int(11) NOT NULL AUTO_INCREMENT ,
-`username`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
-`password`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
+`username`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`password`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 
-`hoten`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
-`gioitinh` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
+`hoten`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`gioitinh` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 `sdt`  int(11) NOT NULL ,
 `ngaysinh` date,
 `email`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`isactive` tinyint(1) not null,
+`quyentruycap` tinyint(1) not null,
 PRIMARY KEY (`id_user`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
 AUTO_INCREMENT=1
 
 ;
@@ -28,7 +32,27 @@ AUTO_INCREMENT=1
 -- Records of admin
 -- ----------------------------
 BEGIN;
-INSERT INTO `admin` VALUES ('1', 'admin', 'admin', 'Thành Đạt','Nam', '84985918798','1998/11/18', 'datbt62@wru.vn','0');
+INSERT INTO `admin` VALUES ('1', 'admin', 'admin', 'Thành Đạt','Nam', '84985918798','1998/11/18', 'datbt62@wru.vn','1'),
+('2', 'nv1', 'nv1', 'Toàn','Nam', '84985918798','1998/11/18', 'datbt62@wru.vn','2');
+COMMIT;
+-- ----------------------------
+-- Table structure for quyen
+-- ----------------------------
+DROP TABLE IF EXISTS `quyen`;
+CREATE TABLE `quyen` (
+`quyentruycap`  tinyint(1) NULL DEFAULT NULL ,
+`tenquyen`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL 
+)
+ENGINE=InnoDB
+DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+
+;
+
+-- ----------------------------
+-- Records of quyen
+-- ----------------------------
+BEGIN;
+INSERT INTO `quyen` VALUES ('1', 'Admin'), ('2', 'Nhân viên');
 COMMIT;
 
 -- ----------------------------
@@ -36,12 +60,14 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `cthd`;
 CREATE TABLE `cthd` (
-`mahd`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`masp`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`mahd`  INT(6) NOT NULL  ,
+`masp`   INT(6) NOT NULL ,
+`tensp`  varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 `SoLuong`  int(10) NULL DEFAULT NULL ,
 `DonGia`  int(11) NULL DEFAULT NULL ,
 `GiamGia`  int(11) NULL DEFAULT NULL ,
-PRIMARY KEY (`MaHD`, `Masp`)
+`Tongtien`  int(11) NULL DEFAULT NULL,
+PRIMARY KEY (`mahd`, `masp`)
 )
 ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
@@ -59,17 +85,20 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `hoadon`;
 CREATE TABLE `hoadon` (
-`mahd`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`DaThanhToan`  tinyint(2) NULL DEFAULT NULL ,
+`mahd` INT(6)  NOT NULL AUTO_INCREMENT,
 `TinhTrangGiaoHang`  tinyint(2) NULL DEFAULT NULL ,
 `NgayDat`  date NULL DEFAULT NULL ,
-`NgayGiao`  date NULL DEFAULT NULL ,
-`MaKH`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+`TenKH` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+`Email`  varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+`SDT`  char(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+`duongxa`  varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+`quanhuyen`  varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+`tinh`  varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
 `Tongtien`  int(20) NULL DEFAULT NULL ,
-PRIMARY KEY (`MaHD`)
+  PRIMARY KEY (`mahd`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
 
 ;
 
@@ -79,44 +108,19 @@ DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 BEGIN;
 COMMIT;
 
--- ----------------------------
--- Table structure for khachhang
--- ----------------------------
-DROP TABLE IF EXISTS `khachhang`;
-CREATE TABLE `khachhang` (
-`MaKH`  INT(6) UNSIGNED AUTO_INCREMENT NOT NULL ,
-`TenKhachHang`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`gioitinh` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL ,
-`ngaysinh` date,
-`Email`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`SDT`  char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`duongxa`  varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`quanhuyen`  varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-`tinh`  varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-PRIMARY KEY (`MaKH`)
-)
-ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 
-;
-
--- ----------------------------
--- Records of khachhang
--- ----------------------------
-BEGIN;
-COMMIT;
 
 -- ----------------------------
 -- Table structure for loaisach
 -- ----------------------------
 DROP TABLE IF EXISTS `loaisp`;
 CREATE TABLE `loaisp` (
-`maloaisp`  int(1) NOT NULL UNSIGNED AUTO_INCREMENT,
-`tenloaisp`  varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
-PRIMARY KEY (`MaLoaisp`)
+`maloaisp`  int(1) NOT NULL AUTO_INCREMENT,
+`tenloaisp`  varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL ,
+PRIMARY KEY (`maloaisp`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
 
 ;
 
@@ -132,15 +136,15 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `nhacc`;
 CREATE TABLE `nhacc` (
-`MaNCC`  int(11) NOT NULL UNSIGNED AUTO_INCREMENT,
-`TenNCC`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`SDT`  char(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`Email`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`DiaChi`  varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`MaNCC` int(11) NOT NULL AUTO_INCREMENT ,
+`TenNCC`  varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`SDT`  char(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`Email`  varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`DiaChi`  varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 PRIMARY KEY (`MaNCC`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
 
 ;
 
@@ -156,19 +160,18 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `sanpham`;
 CREATE TABLE `sanpham` (
-`masp`  varchar(10) NOT NULL UNSIGNED AUTO_INCREMENT ,
-`tensp`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`masp`  int(11) NOT NULL AUTO_INCREMENT ,
+`tensp`  varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 `maloaisp`  int(1) null default null ,
-`Mancc`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`HinhAnh`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+`Mancc`  int(10) null default null,
+`HinhAnh`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
 `DonGia`  int(11) NOT NULL ,
 `khuyenmai` int,
 `SoLuongTon`  tinyint(20) NOT NULL ,
 PRIMARY KEY (`masp`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
 ;
 
 -- ----------------------------
@@ -196,14 +199,14 @@ COMMIT;
 DROP TABLE IF EXISTS `slide`;
 CREATE TABLE `slide` (
 `Maslide` int(5) UNSIGNED AUTO_INCREMENT NOT NULL,
-`Anhslide` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`Tieude` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-`Noidung` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`Anhslide` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`Tieude` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL ,
+`Noidung` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
     PRIMARY KEY (`Maslide`)
 )
 ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
-
+DEFAULT CHARACTER SET=utf8mb4 COLLATE utf8mb4_unicode_ci
+;
 -- ----------------------------
 -- Records of slide
 -- ----------------------------

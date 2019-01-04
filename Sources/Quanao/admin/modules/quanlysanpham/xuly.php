@@ -1,10 +1,11 @@
 
 
 <?php
-     include('../modules/connect/config.php');
+     include('../connect/config.php');
+	 mysqli_set_charset($cnn,"utf8");
 	 $id=$_GET['id'];
-	 $TenSp=$_POST['TenSP'];
-	 $loaisp=$_POST['loaisp'];
+	 $TenSp=$_POST['tensp'];
+	 $maloaisp=$_POST['maloaisp'];
 	 $nhacc=$_POST['nhacc'];
 	 $HinhAnh=$_POST['HinhAnh']; 	 
 	 $DonGia=$_POST['DonGia'];
@@ -13,20 +14,25 @@
 	
 	 if(isset($_POST['them'])){
 		 //them
-		 $sql="insert into sanpham (tensp,maloaisp,Mancc,HinhAnh,DonGia,khuyenmai,SoLuongTon)values('$TenSp','$loaisp','$nhacc','$HinhAnh','$DonGia','$khuyenmai',$SoLuongTon')";
+		 $sql="insert into sanpham (tensp,maloaisp,Mancc,HinhAnh,DonGia,khuyenmai,SoLuongTon)values(,$TenSp','$maloaisp','$nhacc','$HinhAnh','$DonGia','$khuyenmai',$SoLuongTon')";
 		 mysqli_query($cnn,$sql);
-		 header('location:../../index.php?quanly=quanlysanpham&ac=them');
+		header('location:../../index.php?quanly=quanlysanpham&ac=them');
+		
+		
+		 
 	 }elseif(isset($_POST['sua'])){
 		 //Sua
 		
-			$sql="update sanpham set tensp='$TenSach',maloaisp='$loaisach',Mancc='$nhacc',HinhAnh='$HinhAnh',DonGia='$DonGia',khuyenmai='$khuyenmai',SoLuongTon='$SoLuongTon'where masp='$id'";
-		
+			$sql="update sanpham set tensp='$TenSp',Mancc='$nhacc',HinhAnh='$HinhAnh',DonGia='$DonGia',khuyenmai='$khuyenmai',SoLuongTon='$SoLuongTon', maloaisp ='$maloaisp' where masp='$id'" ;
+		    
 		mysqli_query($cnn,$sql);
-		header('location:.././index.php?quanly=quanlysanpham&ac=sua&id='.$id);
+		
+		header('location:../../index.php?quanly=quanlysanpham&ac=sua&id='.$id);
 		//xóa
 	 }else{
-		 $sql="delete from sanpham where masp='$id'";
-		 mysql_query($sql);
-		  header('location:.././index.php?quanly=quanlychitietsach&ac=them');
+		 echo "lỗi ko thêm đc";
+	    // $sql="delete from sanpham where masp='$id'";
+		// mysqli_query($cnn,$sql);
+		// header('location:../../index.php?quanly=quanlysanpham&ac=them');
 	 }
 ?>

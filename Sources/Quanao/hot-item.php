@@ -62,7 +62,7 @@ while ($dong= mysqli_fetch_array($ketqua)) {
 
     <tr>
     <td align=center>
-    <button class="btn btn-warning" id="themgiohang">Thêm giỏ hàng</button>
+    <button class="btn btn-warning" id="themgiohang" ><a href="index.php?page=cart&id=<?php echo $dong['masp']?>">Thêm giỏ hàng</a> </button>
     </td>    
     </tr>
 

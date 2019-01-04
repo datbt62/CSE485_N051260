@@ -25,16 +25,17 @@
                             <input class="form-control search-field" type="search" name="search" id="search-field"></div>
                         </form>
                         <div class="shoppingcart">
-                        <button class="btn btn-secondary" type="button" >
-                        <img src="assets/img/_ionicons_svg_md-cart.svg" alt="" srcset="" height=30 width=30>
+                        <button class="btn btn-secondary" type="button" ><a href="index.php?page=listcart">
+                        <img src="assets/img/_ionicons_svg_md-cart.svg" alt="" srcset="" height=30 width=30></a>
                         </button></div>
-                        <form class="dangnhap"><span class="navbar-text" style="color:black; padding:5px; margin:5px;">
-                        <a href="" class="login" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập</a>
+                        <span class="navbar-text" style="color:black; padding:5px; margin:5px;">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">Đăng nhập</button>
+                        
                         <?php include('dangnhap.php'); ?>
-                        <div class="logout"></div>
+                        
                         </span>
                         
-                        </form>
+                        
             </div>
         </div>
         

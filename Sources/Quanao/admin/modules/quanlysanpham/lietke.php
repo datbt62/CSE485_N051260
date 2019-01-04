@@ -1,6 +1,6 @@
 
 <?php
-$sql="select * from sanpham inner join loaisp on  loaisp.maloaisp=sanpham.maloaisp left join nhacc on nhacc.MaNCC=sanpham.Mancc ";
+$sql="select * from sanpham inner join loaisp on  loaisp.maloaisp=sanpham.maloaisp inner join nhacc on nhacc.MaNCC=sanpham.Mancc order by masp asc";
 $run=mysqli_query($cnn,$sql);
 ?>
 
@@ -21,6 +21,7 @@ $run=mysqli_query($cnn,$sql);
     <th><em><strong>Nhà cung cấp</strong></em></th>
      <th><em><strong>Đơn Giá</strong></em></th>
     <th><em><strong>Khuyến mãi</strong></em></th>
+    <th><em><strong>Số lượng tồn</strong></em></th>
     <th colspan="2"><em><strong>Quản lý</strong></em></th>
   </tr>
   </thead>
@@ -37,10 +38,11 @@ $run=mysqli_query($cnn,$sql);
     <td><?php echo $dong['tenloaisp']; ?></td>
 
    
-    <td><?php if($dong['Mancc']=''){echo 'Không có nhà cc';}else{echo $dong['TenNCC'];} ?></td>
+    <td><?php echo $dong['TenNCC']; ?></td>
     
     <td><?php echo $dong['DonGia']; ?> VNĐ</td>
-    
+
+    <td><?php echo $dong['SoLuongTon']; ?></td>
     <td><?php echo $dong['khuyenmai']; ?></td>
     
     <td><a href="index.php?quanly=quanlysanpham&ac=sua&id=<?php echo $dong['masp']?>">Sửa</td>

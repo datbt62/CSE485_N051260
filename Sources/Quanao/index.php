@@ -22,13 +22,8 @@
     
 </head>
 <body>
-     <?php 
-       session_start();
-      if(isset($_SESSION['dangnhap']) && $_SESSION['isaction'] == 1){
-            include('admin/index.php');}
-            else{
-            
-    ?>  
+      
+    
    <div class="main">
     <?php
 	    
@@ -43,7 +38,7 @@
 
     ?>
    </div>
-   <?php } ?>
+ 
    <link rel="stylesheet" href="assets/css/styles.css">   
      <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

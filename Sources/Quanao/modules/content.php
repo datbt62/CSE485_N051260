@@ -119,20 +119,22 @@
 				// 	include('modules/chitietsp.php');			 
 				// }
 				else
-				if($page=='slide1'){
-					$maslide='1';
-					include('modules/slide/tintuc.php');
+				if($page=='listcart'){
+
+					include('modules/giohang/listcart.php');
 				}
-				else if($page=='slide2'){
-					$maslide='2';
-					include('modules/slide/tintuc.php');
+				else
+				if($page=='cart'){
+
+					include('modules/giohang/cart.php');
 				}
-				else if($page=='slide3'){
-					$maslide='3';
-					include('modules/slide/tintuc.php');
+				else if($page=='checkout'){
+
+					include('modules/giohang/checkout.php');
 				}
-				else if($page=='slide4'){
-					$maslide='4';
+				else
+				if($page=='slide'){
+
 					include('modules/slide/tintuc.php');
 				}
 		   ?>
@@ -140,4 +142,4 @@
       
         
     </div>    
-     <div class="clear"></div>
+    

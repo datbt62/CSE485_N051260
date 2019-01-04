@@ -11,15 +11,15 @@
     {
         $tam='';
     }if($tam=='them'){
-        include('modules/quanlysanpham/them.php');
+        include('modules/quanlyslide/them.php');
     }if($tam=='sua'){
-        include('modules/quanlysanpham/sua.php');	
+        include('modules/quanlyslide/sua.php');	
     }
     ?>
 
 <div class="row">
     <?php
-    include('modules/quanlysanpham/lietke.php');
-    ?>
+include('modules/quanlyslide/lietke.php');
+?>
 	
 </div>
